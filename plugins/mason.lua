@@ -7,8 +7,10 @@ return {
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
-        -- "lua_ls",
+        "cssls", "denols", "dockerls", "docker_compose_language_service", "elixirls",
+        "lua_ls", "pyright", "tailwindcss", "tsserver",
       })
+      opts.automatic_setup = true
     end,
   },
   -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
